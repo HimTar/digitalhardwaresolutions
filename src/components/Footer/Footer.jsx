@@ -9,10 +9,8 @@ export default function Footer() {
     <div className={styles.wrapper}>
       <div className={styles.footer}>
         <div className={styles.left}>
-          <h1>ReachTheWeb</h1>
-          <p className={styles.byline}>
-            Building Dreams And Ideas Into Reality
-          </p>
+          <h1 style={{ color: "white" }}>Digital Hardware Solutions</h1>
+          <p className={styles.byline}>We Build Products You Desire</p>
         </div>
 
         <div className={styles.right}>

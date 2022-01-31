@@ -24,11 +24,14 @@ const ServiceCard = ({ item, handleOpenContact }) => {
   return (
     <div className={styles.serviceCard}>
       <img src={item.link} alt="icons" className={styles.serviceCardIcon} />
-      <h1 className={styles.serviceCardTitle}>{item.title}</h1>
-      <p className={styles.serviceCardDesc}>{item.desc}</p>
-      <button className={styles.contactNow} onClick={handleOpenContact}>
-        Contact Now{" "}
-      </button>
+
+      <div className={styles.serviceCardCont}>
+        <h1 className={styles.serviceCardTitle}>{item.title}</h1>
+        {/* <p className={styles.serviceCardDesc}>{item.desc}</p> */}
+        <button className={styles.contactNow} onClick={handleOpenContact}>
+          Contact Now{" "}
+        </button>
+      </div>
     </div>
   );
 };
@@ -52,39 +55,66 @@ export default function Home({ posts }) {
     setOpenContactForm(true);
   };
 
-  const cardDetail = [
-    {
-      title: "Faster",
-      desc: "We give you guaranteed 12-hour turnarounds so that you can push ideas faster",
-      link: "/icons/fast.png",
-    },
-    {
-      title: "Cheaper",
-      desc: "Our charges are reasonable and we don't charge any hidden overhead expenses",
-      link: "/icons/cheap.png",
-    },
-    {
-      title: "Easier",
-      desc: "We need only a little of your time to understand your requirements and start working.",
-      link: "/icons/easy.png",
-    },
-  ];
-
   const serviceCardDetail = [
     {
-      title: "Websites",
+      title: "LED and LCD Based Projects",
       desc: "Build Featureful websites that are compatible with every device.",
       link: "/images/website.svg",
     },
     {
-      title: "Mobile Apps",
-      desc: "Amazing Mobile Applications that works on both Android and IOS.",
-      link: "/images/mobile.svg",
+      title: "Seven Segment Display Projects",
+      desc: "Build Featureful websites that are compatible with every device.",
+      link: "/images/website.svg",
     },
     {
-      title: "Servers",
-      desc: "Powerful and Robust servers that can serve multiple clients. ",
-      link: "/images/server.svg",
+      title: "Temprature Display Projects",
+      desc: "Build Featureful websites that are compatible with every device.",
+      link: "/images/website.svg",
+    },
+    {
+      title: "Clock and Timer Display",
+      desc: "Build Featureful websites that are compatible with every device.",
+      link: "/images/website.svg",
+    },
+    {
+      title: "IR Based On/Off Switch",
+      desc: "Build Featureful websites that are compatible with every device.",
+      link: "/images/website.svg",
+    },
+    {
+      title: "Automatic Relay Control",
+      desc: "Build Featureful websites that are compatible with every device.",
+      link: "/images/website.svg",
+    },
+    {
+      title: "Timer Switch For Device On/Off",
+      desc: "Build Featureful websites that are compatible with every device.",
+      link: "/images/website.svg",
+    },
+    {
+      title: "Microcontroller Based Projects",
+      desc: "Build Featureful websites that are compatible with every device.",
+      link: "/images/website.svg",
+    },
+    {
+      title: "Touch and Touchless Switch",
+      desc: "Build Featureful websites that are compatible with every device.",
+      link: "/images/website.svg",
+    },
+    {
+      title: "RS232, RS485 Communication Devices",
+      desc: "Build Featureful websites that are compatible with every device.",
+      link: "/images/website.svg",
+    },
+    {
+      title: "GPRS/GPS Based Projects",
+      desc: "Build Featureful websites that are compatible with every device.",
+      link: "/images/website.svg",
+    },
+    {
+      title: "Digital Sensor Switch",
+      desc: "Build Featureful websites that are compatible with every device.",
+      link: "/images/website.svg",
     },
   ];
 
@@ -92,48 +122,31 @@ export default function Home({ posts }) {
     <MainLayout>
       <div className={styles.container}>
         <div className={styles.row}>
-          <img src="/images/home.svg" alt="" className={styles.mainImg} />
+          <img src="/images/home.jpg" alt="" className={styles.mainImg} />
 
           <div className={styles.right}>
             <Fade right>
-              <h1 className={styles.title}>Give Wings to your Business</h1>
+              <h1 className={styles.title}>
+                We Provide Customized Embedded Solutions
+              </h1>
 
               <p className={styles.desc}>
-                Go Online and reach more customers. We are here to help your
-                business grow.
+                Our team of experienced engineers will develop highly efficient
+                embedded solutions for you.
               </p>
 
               <button className={styles.seeMore} onClick={handleOpenContact}>
                 Connect With Us
               </button>
             </Fade>
-            <div className={styles.circle1} />
           </div>
         </div>
 
-        <div className={styles.commitmentDiv}>
-          <h1 className={styles.divTitle}>We are your best partner</h1>
-          <p className={styles.divDesc}>
-            We believe in delivering an exceptional experience which caters to
-            your business, growth and success
-          </p>
-
-          <Fade bottom>
-            <div className={styles.cardCont}>
-              {cardDetail.map((item, key) => (
-                <Card item={item} key={key} />
-              ))}
-            </div>
-          </Fade>
-
-          <div className={styles.rect1} />
-        </div>
-
         <div className={styles.commitmentDiv} id="services">
-          <h1 className={styles.divTitle}>Our Services</h1>
+          <h1 className={styles.divTitle}>Our Projects</h1>
           <p className={styles.divDesc}>
-            Our experienced developers use the latest technologies to make
-            powerful and elegant applications for your business.
+            We have experience in wide range of embedded projects and have
+            provided excellent service. Our projects of expertise include
           </p>
 
           <Fade bottom>
@@ -145,79 +158,6 @@ export default function Home({ posts }) {
                   handleOpenContact={handleOpenContact}
                 />
               ))}
-            </div>
-          </Fade>
-
-          <div className={styles.circle2} />
-          <div className={styles.smallRect1} />
-          <div className={styles.smallRect2} />
-          <div className={styles.smallRect3} />
-        </div>
-
-        <div className={styles.companyDiv}>
-          <h1 className={styles.divTitle}>Our happy clients</h1>
-          <p className={styles.divDesc}>
-            We have delivered exceptional products to our clients.
-          </p>
-
-          <Fade bottom>
-            <div className={styles.company}>
-              {/* <a
-                href="https://enim.ai"
-                target="_blank"
-                rel="noopener noreferrer"
-                className={styles.partners}
-                passHref
-              > */}
-              <img
-                src="/images/clients/enim.png"
-                alt="Enim.Ai"
-                className={styles.partners}
-              />
-              {/* </a> */}
-
-              {/* <a
-                href="https://growthgear.in"
-                className={styles.partners}
-                target="_blank"
-                rel="noopener noreferrer"
-                passHref
-              > */}
-              <img
-                src="/images/clients/growthgear.jpeg"
-                alt="GrowthGear"
-                className={styles.partners}
-              />
-              {/* </a> */}
-
-              {/* <a
-                href="https://www.vtorlabs.com/#/home"
-                target="_blank"
-                rel="noopener noreferrer"
-                className={styles.partners}
-                passHref
-              > */}
-              <img
-                src="/images/clients/vtor.png"
-                alt="Vtor Labs"
-                className={styles.partners}
-              />
-              {/* </a> */}
-
-              <img
-                src="/images/clients/bigfit.png"
-                alt="BigFit"
-                className={styles.partners}
-              />
-
-              {/* <a
-                href="https://www.startwithgenesis.in/"
-                className={styles.partners}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <img src="/images/clients/start.png" alt="StartWithGenesys" />
-              </a> */}
             </div>
           </Fade>
         </div>
