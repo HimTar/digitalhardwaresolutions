@@ -1,4 +1,5 @@
 import Link from "next/link";
+// import Image from "next/image";
 import styles from "./style.module.scss";
 
 export default function Navbar() {
@@ -7,7 +8,10 @@ export default function Navbar() {
       <div className={styles.container}>
         {/* <img src="/icons/logo.png" alt="logo" className={styles.logo} /> */}
 
-        <h2 className={styles.logo}>Digital Hardware Solutions</h2>
+        <h2 className={styles.logo}>
+          <img src="/icons/logo.png" alt="logo" width={40} height={40} />
+          Digital Hardware Solutions
+        </h2>
 
         <ul className={styles.list}>
           <li className={styles.item}>Home</li>

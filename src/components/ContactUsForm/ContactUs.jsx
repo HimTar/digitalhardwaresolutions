@@ -98,11 +98,11 @@ export default function ContactUs({ open, handleClose }) {
             x
           </p>
 
-          <h2 className={styles.title}>Contact Us</h2>
+          <h2 className={styles.title}>Query</h2>
 
           <p className={styles.desc}>
-            Feel like contacting us ? Write your message below and we will get
-            back to you as soon as possible.
+            Have a query regarding our products ? Write your message below and
+            we will get back to you as soon as possible.
           </p>
 
           {success ? (
@@ -114,22 +114,22 @@ export default function ContactUs({ open, handleClose }) {
             <>
               <TextField
                 required
+                value={name}
+                id="outlined-required"
+                placeholder="Your full name here"
+                variant="outlined"
+                onChange={({ target }) => setName(target.value)}
+                className={classes.field}
+              />
+
+              <TextField
+                required
                 type="email"
                 value={email}
                 id="outlined-required"
                 placeholder="Your email here"
                 variant="outlined"
                 onChange={({ target }) => setEmail(target.value)}
-                className={classes.field}
-              />
-
-              <TextField
-                required
-                value={name}
-                id="outlined-required"
-                placeholder="Your full name here"
-                variant="outlined"
-                onChange={({ target }) => setName(target.value)}
                 className={classes.field}
               />
 

@@ -25,7 +25,7 @@ export default function Footer() {
       </div>
 
       <div className={styles.copyright}>
-        @2020 ReachTheWeb Solutions LLP, All rights reserved
+        @2021 Digital Hardware Solutions, All rights reserved
       </div>
     </div>
   );

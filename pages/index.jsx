@@ -29,7 +29,7 @@ const ServiceCard = ({ item, handleOpenContact }) => {
         <h1 className={styles.serviceCardTitle}>{item.title}</h1>
         {/* <p className={styles.serviceCardDesc}>{item.desc}</p> */}
         <button className={styles.contactNow} onClick={handleOpenContact}>
-          Contact Now{" "}
+          Raise Query
         </button>
       </div>
     </div>
@@ -59,62 +59,62 @@ export default function Home({ posts }) {
     {
       title: "LED and LCD Based Projects",
       desc: "Build Featureful websites that are compatible with every device.",
-      link: "/images/website.svg",
+      link: "/images/products/led.jpeg",
     },
     {
       title: "Seven Segment Display Projects",
       desc: "Build Featureful websites that are compatible with every device.",
-      link: "/images/website.svg",
+      link: "/images/products/7segment.jpeg",
     },
     {
       title: "Temprature Display Projects",
       desc: "Build Featureful websites that are compatible with every device.",
-      link: "/images/website.svg",
+      link: "/images/products/temprature.jpeg",
     },
     {
       title: "Clock and Timer Display",
       desc: "Build Featureful websites that are compatible with every device.",
-      link: "/images/website.svg",
+      link: "/images/products/clock.jpeg",
     },
     {
       title: "IR Based On/Off Switch",
       desc: "Build Featureful websites that are compatible with every device.",
-      link: "/images/website.svg",
+      link: "/images/products/relay.jpeg",
     },
     {
       title: "Automatic Relay Control",
       desc: "Build Featureful websites that are compatible with every device.",
-      link: "/images/website.svg",
+      link: "/images/products/relaycontrol.jpeg",
     },
     {
-      title: "Timer Switch For Device On/Off",
+      title: "Dimming X-Ray light & Timer On/Off Switch",
       desc: "Build Featureful websites that are compatible with every device.",
-      link: "/images/website.svg",
+      link: "/images/products/dimingled.jpeg",
     },
     {
       title: "Microcontroller Based Projects",
       desc: "Build Featureful websites that are compatible with every device.",
-      link: "/images/website.svg",
+      link: "/images/products/microcontroller.jpeg",
     },
     {
       title: "Touch and Touchless Switch",
       desc: "Build Featureful websites that are compatible with every device.",
-      link: "/images/website.svg",
+      link: "/images/products/touchswitch.jpeg",
     },
     {
       title: "RS232, RS485 Communication Devices",
       desc: "Build Featureful websites that are compatible with every device.",
-      link: "/images/website.svg",
+      link: "/images/products/rs232.jpeg",
     },
     {
-      title: "GPRS/GPS Based Projects",
+      title: "Keypad",
       desc: "Build Featureful websites that are compatible with every device.",
-      link: "/images/website.svg",
+      link: "/images/products/keypad.jpeg",
     },
     {
       title: "Digital Sensor Switch",
       desc: "Build Featureful websites that are compatible with every device.",
-      link: "/images/website.svg",
+      link: "/images/products/sensor.jpeg",
     },
   ];
 
@@ -162,20 +162,26 @@ export default function Home({ posts }) {
           </Fade>
         </div>
 
+        {/* <div className={styles.contactNumber}>
+          <div className={styles.ele}>Contact Number : +91 9811996716</div>
+
+          <div className={styles.ele}>Email Id : tariyallv@gmail.com</div>
+        </div> */}
+
         <Fade bottom>
           <div className={styles.contactUs} id="contactUs">
             <div className={styles.right}>
-              <h1 className={styles.contactTitle}>Connect With Us</h1>
+              <h1 className={styles.contactTitle}>Have a query ?</h1>
               <p className={styles.contactMessage}>
-                We are just a call away. Get connected with us and expand your
-                network. Your right customers are waiting, you just have to show
-                them your power.
+                We are just a call away.
+                <br />
+                <br /> Contact Number : +91 9811996716
               </p>
               <button
                 className={styles.contactButton}
                 onClick={handleOpenContact}
               >
-                Talk to us
+                Raise a query
               </button>
             </div>
             <img src="/images/mailbox.svg" className={styles.contactUsImage} />
