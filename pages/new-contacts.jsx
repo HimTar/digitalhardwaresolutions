@@ -1,3 +1,4 @@
+import Head from "next/head";
 import { useState, useEffect } from "react";
 
 import { DataGrid } from "@material-ui/data-grid";
@@ -67,6 +68,11 @@ export default function NewContacts() {
 
   return (
     <>
+
+    <Head>
+      <meta name="robots" content="noindex"/>
+    </Head>
+
       <h1 style={{ margin: "1rem 0 2rem" }}>New Contacts</h1>
       <p style={{ margin: "1rem 0 2rem" }}>
         HomePage View : {home}, Contact Page View : {contact}

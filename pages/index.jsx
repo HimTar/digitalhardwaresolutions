@@ -28,7 +28,7 @@ const ServiceCard = ({ item, handleOpenContact }) => {
       <div className={styles.serviceCardCont}>
         <h1 className={styles.serviceCardTitle}>{item.title}</h1>
         {/* <p className={styles.serviceCardDesc}>{item.desc}</p> */}
-        <button className={styles.contactNow} onClick={handleOpenContact}>
+        <button className={styles.contactNow} onClick={() => handleOpenContact(item.title)}>
           Raise Query
         </button>
       </div>
@@ -38,6 +38,7 @@ const ServiceCard = ({ item, handleOpenContact }) => {
 
 export default function Home({ posts }) {
   const [openContactForm, setOpenContactForm] = useState(false);
+  const [contactMessage, setContactMessage] = useState("");
 
   useEffect(() => {
     axios
@@ -46,12 +47,9 @@ export default function Home({ posts }) {
       .catch((err) => {});
   }, []);
 
-  const handleOpenContact = () => {
-    axios
-      .post(viewContactURL)
-      .then((res) => {})
-      .catch((err) => {});
-
+  const handleOpenContact = (message = "") => {
+    console.log(message)
+    setContactMessage(message);
     setOpenContactForm(true);
   };
 
@@ -135,7 +133,7 @@ export default function Home({ posts }) {
                 embedded solutions for you.
               </p>
 
-              <button className={styles.seeMore} onClick={handleOpenContact}>
+              <button className={styles.seeMore} onClick={() => handleOpenContact("General")}>
                 Connect With Us
               </button>
             </Fade>
@@ -179,7 +177,7 @@ export default function Home({ posts }) {
               </p>
               <button
                 className={styles.contactButton}
-                onClick={handleOpenContact}
+                onClick={() => handleOpenContact("General")}
               >
                 Raise a query
               </button>
@@ -192,6 +190,7 @@ export default function Home({ posts }) {
       <ContactUs
         open={openContactForm}
         handleClose={() => setOpenContactForm(false)}
+        defaultMessage={contactMessage}
       />
     </MainLayout>
   );

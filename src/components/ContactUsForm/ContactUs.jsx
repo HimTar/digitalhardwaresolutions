@@ -10,6 +10,7 @@ import axios from "axios";
 import { addNewContactURL } from "../../../Utils/constants";
 
 import styles from "./styles.module.scss";
+import { useEffect } from "react";
 
 const useStyles = makeStyles((theme) => ({
   modal: {
@@ -26,7 +27,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function ContactUs({ open, handleClose }) {
+export default function ContactUs({ open, handleClose, defaultMessage="" }) {
   const classes = useStyles();
 
   const [name, setName] = useState("");
@@ -37,6 +38,12 @@ export default function ContactUs({ open, handleClose }) {
   const [error, setError] = useState("");
   const [success, setSuccess] = useState(false);
   const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    if(defaultMessage){
+      setMessage("Query Regarding :- " + defaultMessage + "\n\nMessage :- ")
+    }
+  }, [defaultMessage])
 
   const validate = () => {
     if (!name || !email || !message) {
@@ -78,6 +85,7 @@ export default function ContactUs({ open, handleClose }) {
 
     setError("");
   };
+
 
   return (
     <Modal
